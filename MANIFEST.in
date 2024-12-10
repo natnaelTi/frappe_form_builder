@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include form_builder *.css
+recursive-include form_builder *.csv
+recursive-include form_builder *.html
+recursive-include form_builder *.ico
+recursive-include form_builder *.js
+recursive-include form_builder *.json
+recursive-include form_builder *.md
+recursive-include form_builder *.png
+recursive-include form_builder *.py
+recursive-include form_builder *.svg
+recursive-include form_builder *.txt
+recursive-exclude form_builder *.pyc

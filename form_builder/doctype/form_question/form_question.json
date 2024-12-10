@@ -1,0 +1,47 @@
+{
+    "name": "Form Question",
+    "doctype": "DocType",
+    "module": "Form Builder",
+    "istable": 1,
+    "fields": [
+        {
+            "fieldname": "question_text",
+            "label": "Question",
+            "fieldtype": "Text Editor",
+            "reqd": 1
+        },
+        {
+            "fieldname": "question_type",
+            "label": "Type",
+            "fieldtype": "Select",
+            "options": "Single Choice\nMultiple Choice\nText\nNumber\nDate",
+            "reqd": 1
+        },
+        {
+            "fieldname": "options",
+            "label": "Options",
+            "fieldtype": "Table",
+            "options": "Form Question Option",
+            "depends_on": "eval:doc.question_type=='Single Choice' || doc.question_type=='Multiple Choice'"
+        },
+        {
+            "fieldname": "correct_answer",
+            "label": "Correct Answer",
+            "fieldtype": "Small Text",
+            "depends_on": "eval:parent.form_type=='Quiz'"
+        },
+        {
+            "fieldname": "points",
+            "label": "Points",
+            "fieldtype": "Int",
+            "default": 1,
+            "depends_on": "eval:parent.form_type=='Quiz'"
+        },
+        {
+            "fieldname": "max_attempts",
+            "label": "Maximum Attempts",
+            "fieldtype": "Int",
+            "depends_on": "eval:parent.form_type=='Quiz'"
+        }
+    ]
+}

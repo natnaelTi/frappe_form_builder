@@ -1,0 +1,71 @@
+{
+    "name": "Form Response",
+    "doctype": "DocType",
+    "module": "Form Builder",
+    "custom": 1,
+    "autoname": "format:RESP-{####}",
+    "fields": [
+        {
+            "fieldname": "form",
+            "label": "Form",
+            "fieldtype": "Link",
+            "options": "Form Template",
+            "reqd": 1
+        },
+        {
+            "fieldname": "respondent",
+            "label": "Respondent",
+            "fieldtype": "Link",
+            "options": "User",
+            "reqd": 1
+        },
+        {
+            "fieldname": "responses",
+            "label": "Responses",
+            "fieldtype": "Table",
+            "options": "Form Answer"
+        },
+        {
+            "fieldname": "attempt_count",
+            "label": "Attempt Count",
+            "fieldtype": "Int",
+            "default": 1
+        },
+        {
+            "fieldname": "score",
+            "label": "Score",
+            "fieldtype": "Float",
+            "depends_on": "eval:doc.form_type=='Quiz'"
+        },
+        {
+            "fieldname": "status",
+            "label": "Status",
+            "fieldtype": "Select",
+            "options": "In Progress\nCompleted",
+            "default": "In Progress"
+        },
+        {
+            "fieldname": "start_time",
+            "label": "Start Time",
+            "fieldtype": "Datetime"
+        },
+        {
+            "fieldname": "completion_time",
+            "label": "Completion Time",
+            "fieldtype": "Datetime"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1
+        },
+        {
+            "role": "Form Manager",
+            "read": 1
+        }
+    ]
+}
